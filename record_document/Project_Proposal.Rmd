@@ -1,0 +1,91 @@
+---
+title: "Project Proposal - Beverage Category Channel Analysis (Woolworth vs Coles vs Aldi)"
+author: "Nora"
+date: "2025-11-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Project Context
+
+## Background
+
+The Fast-Moving Consumer Goods (FMCG) market in Australia and New Zealand is highly concentrated, dominated by a ‘Duopoly-plus-One’ structure. This includes Woolworths (the market leader, focusing on full-service offerings and expansive private label brands), Coles (the primary competitor, actively pursuing digital transformation in recent years), and Aldi (the major challenger, rapidly growing due to its efficient discount model and limited assortment strategy).
+
+The beverage category is a high-growth, high-competition segment, encompassing high-margin sub-markets from traditional carbonated soft drinks to functional health beverages and ready-to-drink coffee. For any new market entrant, selecting the correct distribution channel is the critical determinant of its ability to break through in this saturated environment.
+
+## The Business Problem
+
+Upon market entry, new beverage brands face the dual challenge of limited resources and scarce shelf space. An incorrect channel selection can result in prohibitive launch costs, inefficient promotional investment, and the risk of inventory obsolescence. The core question the brand needs to solve is: How to identify the channel among the three giants that is the best match for the product’s positioning, offers the most advantageous competitive environment, and will maximize the long-term Return on Investment (ROI).
+
+## The Analytical Solution
+
+This project aims to move beyond traditional qualitative market research by employing a data-driven methodology. I will quantify each channel's market entry barriers, potential profit margins, and brand alignment by comparatively analyzing the existing beverage category structure (e.g., sub-market penetration), pricing strategy, and promotional behavior patterns (e.g., discount depth, bundling strategies) across Woolworths, Coles, and Aldi. The resulting Channel Suitability Model will serve as a data-informed playbook for the new product’s market entry strategy.
+
+
+# Hypothesis
+| Hypothesis ID | Hypothesis Statement | Expected Validation (How we test with data) |
+|---------------|----------------------|----------------------------------------------|
+| **H1** | Woolworths has higher penetration of premium / imported beverage products → suitable for premium-priced products. | SKU composition shows higher share of premium / imported products vs. Coles & Aldi. |
+| **H2** | Aldi follows Everyday Low Price (EDLP) strategy → suitable for high-volume / low-margin products. | Price volatility low, discount depth concentrated between 25–35%. |
+| **H3** | Coles has the largest SKU variety → best pilot channel for test & learn strategy. | SKU count per sub-category higher than Woolworths & Aldi. |
+
+
+
+# Scope and Data Sources
+
+## Scope: 
+| Scope Dimension | Definition |
+|-----------------|------------|
+| **Geography Scope** | Sydney, Australia |
+| **Product Scope** | NARTD (Non-Alcoholic Ready-To-Drink): soft drink, water, juice, functional beverages |
+| **Time Scope** | Phase 1 will start with a same-day price snapshot from all three retailers to ensure data consistency and fairness. In Phase 2, the framework can be extended into a 4-week monitoring window, and further evolved into a dynamic rolling tracking model. |
+
+## Data Source
+| Data Type | Source | Usage |
+|-----------|--------|--------|
+| **SKU / Price / Promotion** | Public web scraping from Woolworths Online / Coles Online / Aldi catalogue | Supports analysis of SKU assortment, pricing strategy, and promotion depth |
+| **Market share / Industry data** | Nielsen / IRI / Roy Morgan / Statista public reports/summaries | Provides macro market context and channel size reference |
+| **Product metadata (brand mapping / subcategory classification)** | Manual cleaning + rule-based mapping | Converts unstructured scraped product text into standardized and structured categories |
+
+
+# Metrics
+### Metrics
+
+| Metric Category | Metric Name | Definition / Calculation | Business Interpretation |
+|----------------|-------------|--------------------------|-------------------------|
+| **Assortment ** | SKU Count | Number of beverage SKUs listed per supermarket | Indicates assortment depth and ability to support new product discovery |
+| **Pricing ** | instore_price and instore_was_price | instore price and the instore was price  | Indicates the price strategy and changing. |
+| **Promotion (Depth)** | Discount Depth % | `(price - promo_price) / price` | Shows aggressiveness of promotions |
+
+
+# Tool
+| Tool / Platform | Usage |
+|------------------|--------|
+| **Python** | Web scraping beverage SKUs, prices, promotion flags |
+| **Pandas** | Data cleaning and calculation |
+| **Tableau** | Dashboard creation, visualization storytelling |
+| **GitHub** | Version control, project documentation, automation (optional GitHub Actions for weekly refresh) |
+| **Markdown** | Project documentation (proposal / findings / portfolio) |
+
+# Deliverables
+
+ Deliverable | Format | Audience / Purpose |
+|-------------|---------|---------------------|
+| **1. Project Report** | PDF or Notion page | Storytelling + business recommendation |
+| **2. Channel Comparison Dashboard** | Tableau | Demonstrates insights visually  |
+| **3. Channel Suitability Scoring Model** | Excel / SQL output / CSV | Shows decision-making based on metrics |
+| **4. GitHub Repo** | Code + documentation | Technical competence (scraping + SQL + data pipeline) |
+
+# Timeline
+| Day | Workstream | Output |
+|-----|------------|--------|
+| **Day 1 — Project Setup** | Finalize scope, categories, key SKUs, scraping URLs | Project Proposal + folder structure |
+| **Day 2-3 — Data Collecting (Web Scraping)** | Scrape beverage data from Woolworth, Coles and Aldi | `wws_beverage.csv`, `coles_beverage.csv`,`aldi_beverage.csv`|
+| **Day 4-6 — Data Cleaning** | Remove duplicate, fix missing, change formate, calculate new data | Clean dataset + format |
+| **Day 5-8 — Dashboard in Tableau** | Build visuals: SKU count + pricing + promo strategy | Channel Comparison Dashboard + insights |
+| **Day 9 — Scoring Model + Storytelling** | Channel Suitability Score (Coles vs Woolworths vs Aldi) | Scoring sheet |
+| **Day 10 — Final Report + Portfolio** | Write case study + push to GitHub + screenshots | Final PDF + portfolio entry |
