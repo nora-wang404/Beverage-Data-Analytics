@@ -10,3 +10,5 @@ scraping/
 
 #self recording documents
 documents/
+
+.idea/

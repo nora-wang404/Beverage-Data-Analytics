@@ -1,0 +1,50 @@
+---
+title: "Beverage Channel Suitability Model & Retail Strategy Analysis"
+author: "Nora"
+date: "December 2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    theme: united
+---
+
+
+# Visualization and Analytical Deep Dive 
+
+The analysis was performed in Tableau and structured into three analytical phases.
+
+## Phase I: Beverage Market Overview (SKU Assortment)
+
+This dashboard analyzed the category structure based on SKU count.
+
+* **SKU Depth:** WWS leads with 1,866 SKUs, Coles follows with 1,484, and ALDI has a narrow channel of only 176 SKUs.
+* **Category Gaps:** ALDI is entirely missing two of the nine defined categories: Non/Low Alcoholic and Others.
+* **Market Share:** Juice, Coffee, Tea, Soft Drink, and Sport & Energy account for the largest market share. While category structures are generally similar across retailers, the SKU counts show significant depth differences.
+
+## Phase II: Beverage Price & Promotion Deep Dive (Strategy & Variability)
+
+This phase analyzed pricing range and promotional behavior.
+
+* **Promotional Strategy (Scatter Plot):**
+    * **ALDI:** Strictly adheres to the **Everyday Low Price (EDLP)** principle, with **no discounted products** in the beverage category.
+    * **Coles:** More aggressive than WWS, with discounted items representing 28.57% of total SKUs, offering deeper and more frequent discounts on high-priced products.
+    * **WWS:** Discount depth is more limited, focusing primarily on small discounts for low-priced items.
+* **Price Positioning (Box Plot):** WWS consistently exhibits the **widest price range** and highest upper/median/lower hinges across most categories, demonstrating strong **premium capability** by introducing high-priced international brands. Coles holds the mid-range position. ALDI maintains the narrowest, lowest price band across all metrics.
+
+## Phase III: Identify Price Matching Corridors and Promotion Battlegrounds (Competitive Gap)
+
+This phase mapped identical SKUs to analyze price synchronization and competitive differentiation.
+
+* **ALDI Price Floor:** For the limited common SKUs found across all three, ALDI's regular price is **consistently 2%-6% lower** than WWS and Coles, setting the market **price floor**. Coles often challenges this floor through promotions.
+* **WWS vs. Coles Synchronization:**
+    * **Regular Price:** The original pricing between WWS and Coles is nearly identical, clustering tightly along a slope $\approx 1$ trend line.
+    * **Actual Price (Post-Discount):** Low-priced products are concentrated below the trend line, indicating Coles frequently prices lower than WWS. For high-value products, discounts are scattered across both sides of the line, showing different promotional advantages across various brands. This suggests Coles accepts discount partnerships more readily to attract traffic, while WWS and Coles maintain separate discount strategies for high-margin items.
+
+# Final Conclusion: Channel Suitability
+
+The analysis reveals three distinct roles for the major retailers, providing clear guidance for new product entry:
+
+* **WWS (Premium Products):** Its wide SKU channel welcomes all price ranges. High-value, high-margin products can best maintain their **premium pricing** without frequent deep discounts. **Recommendation:** If partnering with WWS, advise the new brand to select WWS as the *sole* discounting channel to ensure closer collaboration and maximum exposure.
+* **Coles (All Kinds, Willing Promotion):** Its broad SKU channel is suitable for market entry and product trials. **Value-oriented products** can leverage Coles' frequent and powerful promotional structure to accelerate stock turnover and exposure among price-sensitive customers.
+* **ALDI (Challenge Brands):** Due to its narrow SKU depth, it is not suitable for niche brands. It remains an option for **challenge brands** that can guarantee stable supply and market-bottom pricing, utilizing the high stock turnover of their simple product range.
